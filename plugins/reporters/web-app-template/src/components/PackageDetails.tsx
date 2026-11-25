@@ -113,15 +113,31 @@ function buildSections(pkg: WebAppPackage, dateFormat: DateFormat): Section[] {
     }
     if (artifacts.length > 0) sections.push({ rows: artifacts });
 
-    return sections;
+const srac: Section["rows"] = [];
+
+if (pkg.labels.size > 0) {
+ Array.from(pkg.labels.entries())
+  .filter(([key]) => key.startsWith("srac."))
+  .forEach(([key, value]) => {
+   srac.push({
+    label: key,
+    content: value,
+   });
+  });
 }
 
-// A definition list of a package's core metadata (id, type, VCS, source, homepage, description).
+if (srac.length > 0) {
+ sections.push({
+  title: "SRAC",
+  rows: srac,
+ });
+}
+return sections;
+}
 function PackageDetails({ pkg }: PackageDetailsProps): JSX.Element {
-    const dateFormat = useDateFormat();
-    const sections = buildSections(pkg, dateFormat);
-
-    if (sections.length === 0) {
+ const dateFormat = useDateFormat();
+ const sections = buildSections(pkg, dateFormat);
+ if (sections.length === 0) {
         return <p className="text-muted-foreground text-sm">No package details.</p>;
     }
 

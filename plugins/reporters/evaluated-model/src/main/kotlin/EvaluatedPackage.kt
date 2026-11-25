@@ -73,6 +73,8 @@ data class EvaluatedPackage(
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     val sracLabels: Map<String, String> = labels.filterKeys { it.startsWith("srac.") },
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    val safetyAssertions: List<String> = emptyList(),
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     val curations: List<PackageCuration>,
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     val packageConfigurations: List<PackageConfiguration>,
