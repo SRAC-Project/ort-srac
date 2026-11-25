@@ -305,6 +305,7 @@ internal class EvaluatedModelMapper(private val input: ReporterInput) {
             vcs = project.vcs,
             vcsProcessed = project.vcsProcessed,
             labels = emptyMap(),
+            safetyAssertions = emptyList(),
             curations = emptyList(),
             packageConfigurations = emptyList(),
             paths = mutableListOf(),
@@ -378,6 +379,9 @@ internal class EvaluatedModelMapper(private val input: ReporterInput) {
             vcs = pkg.vcs,
             vcsProcessed = pkg.vcsProcessed,
             labels = pkg.labels,
+            safetyAssertions = pkg.labels
+            .filterKeys { it.startsWith("srac.") }
+            .map { "${it.key}=${it.value}" },
             curations = curations,
             packageConfigurations = packageConfigurations,
             paths = mutableListOf(),
@@ -634,6 +638,7 @@ internal class EvaluatedModelMapper(private val input: ReporterInput) {
             vcs = VcsInfo.EMPTY,
             vcsProcessed = VcsInfo.EMPTY,
             labels = emptyMap(),
+            safetyAssertions = emptyList(),
             curations = emptyList(),
             packageConfigurations = emptyList(),
             paths = mutableListOf(),
