@@ -1,0 +1,8 @@
+{
+  "component": "pkg:maven/com.example.medical/device-controller@3.4.0",
+  "missionFunction": "Therapy Delivery Control",
+  "authority": "IEC 62304",
+  "evidence": "Medical device software risk analysis",
+  "rationale": "Controls therapy delivery functions and participates in safety-related device operation.",
+  "safetyRelevant": true
+}

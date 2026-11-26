@@ -1,0 +1,8 @@
+{
+  "component": "pkg:maven/com.example.rail/signaling@2.1.0",
+  "missionFunction": "Train Movement Authority Processing",
+  "authority": "EN 50128",
+  "evidence": "Railway signaling safety case",
+  "rationale": "Supports route and signaling logic used to ensure safe train separation and movement authority decisions.",
+  "safetyRelevant": true
+}

@@ -1,0 +1,8 @@
+{
+  "component": "pkg:maven/com.example.telemetry/core@1.0.0",
+  "missionFunction": "Telemetry and Command",
+  "authority": "NASA NPR 7150.2",
+  "evidence": "Spacecraft software safety assessment report",
+  "rationale": "Provides telemetry processing and command distribution required for mission operations. Failure could affect spacecraft monitoring and command execution.",
+  "safetyRelevant": true
+}
